@@ -57,7 +57,7 @@ body {
   flex-direction: column; /* 세로 방향으로 정렬 */
   align-items: center;
 
-  background-color: rgb(54, 54, 54); /* 배경색 */
+  /* background-color: rgb(54, 54, 54);  */
   background-image: url('/s1/wrapUp/stp2/img/navv/BBB.png'); /* 배경 이미지 추가 */
   background-size: cover; /* 이미지가 영역을 꽉 채우도록 설정 */
   background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
@@ -80,7 +80,7 @@ body {
   left: 260px; 
   width: 100%; */
 
-  background-color: rgb(198, 198, 198); /* 기본 배경색 */
+  /* background-color: rgb(198, 198, 198);  */
   background-image: url('/s1/wrapUp/stp2/img/navv/monon.png'); /* 배경 이미지 추가 */
   background-size: cover; /* 이미지가 영역을 꽉 채우도록 설정 */
   background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
