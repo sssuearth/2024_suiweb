@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Montserrat:wght@100;500&family=Noto+Sans+KR:wght@400&family=Raleway:wght@400&family=Roboto:wght@400&display=swap"
+      rel="stylesheet" />
+    <title>ex cam</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100vh; /* 화면 높이를 100%로 설정 */
+        width: 100vw; /* 화면 너비를 100%로 설정 */
+        background-color: #ffffff;
+        overflow: hidden; /* 화면 너비 제한으로 스크롤 방지 */
+        display: flex;
+        flex-direction: column; /* 세로로 정렬 */
+      }
+      .black-top {
+        height: 50px; /* 상단 블랙 영역의 높이 */
+        background-color: black; /* 블랙 색상 */
+      }
+      .black-bottom {
+        height: 100px; /* 하단 블랙 영역의 높이 */
+        background-color: black; /* 블랙 색상 */
+      }
+      .container {
+        flex: 1; /* 나머지 공간을 차지 */
+        display: flex;
+        flex-direction: column; /* 세로로 정렬 */
+        justify-content: center; /* 세로 중앙 정렬 */
+        align-items: center; /* 가로 중앙 정렬 */
+      }
+      .row {
+        display: flex; /* 가로로 배치 */
+        width: 100%; /* 가로 100% 사용 */
+        justify-content: center; /* 중앙 정렬 */
+      }
+      .box {
+        width: 45%; /* 박스 너비 조정 */
+        aspect-ratio: 16 / 9; /* 비율 고정 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        color: white;
+        text-align: center;
+        margin: 5px; /* 박스 간격 추가 */
+      }
+      #box1 {
+        background-color: #ff0000;
+      } /* 첫 번째 구역 색상 */
+      #box2 {
+        background-color: #00ff00;
+      } /* 두 번째 구역 색상 */
+      #box3 {
+        background-color: #0000ff;
+      } /* 세 번째 구역 색상 */
+      #box4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black; /* 웹캠 구역 */
+      }
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scaleX(-1); /* 좌우 반전 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="black-top"></div>
+    <!-- 상단 블랙 박스 -->
+    <div class="container">
+      <div class="row">
+        <div id="box1" class="box">아유</div>
+        <div id="box2" class="box">하기</div>
+      </div>
+      <div class="row">
+        <div id="box3" class="box">시러~</div>
+        <div id="box4" class="box">
+          <video autoplay playsinline></video>
+        </div>
+      </div>
+    </div>
+    <div class="black-bottom"></div>
+
+    <!-- 하단 블랙 박스 -->
+    <script>
+      const video = document.querySelector('video');
+      navigator.mediaDevices
+        .getUserMedia({ video: { facingMode: 'user' } }) // 사용자 웹캠 설정
+        .then((stream) => {
+          video.srcObject = stream;
+          video.play();
+        })
+        .catch((err) => {
+          console.error('웹캠을 사용할 수 없습니다: ', err);
+        });
+    </script>
+  </body>
+</html>
