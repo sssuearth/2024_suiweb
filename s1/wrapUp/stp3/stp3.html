@@ -15,7 +15,7 @@
         padding: 0;
         height: 100vh; /* 화면 높이를 100%로 설정 */
         width: 100vw; /* 화면 너비를 100%로 설정 */
-        background-color: #ffffff;
+        background-color: #000000;
         overflow: hidden; /* 화면 너비 제한으로 스크롤 방지 */
         display: flex;
         flex-direction: column; /* 세로로 정렬 */
@@ -27,6 +27,9 @@
       .black-bottom {
         height: 100px; /* 하단 블랙 영역의 고정 높이 */
         background-color: black; /* 블랙 색상 */
+        display: flex; /* Flexbox로 설정하여 이미지 중앙 정렬 */
+        justify-content: center; /* 가로 중앙 정렬 */
+        align-items: center; /* 세로 중앙 정렬 */
       }
       .container {
         flex: 1; /* 나머지 공간을 차지 */
@@ -50,6 +53,8 @@
         color: white;
         text-align: center;
         margin: 5px; /* 박스 간격 추가 */
+        position: relative; /* 이미지 위치 조정을 위해 */
+        overflow: hidden; /* 자식 요소가 박스를 넘지 않도록 설정 */
       }
       #box1 {
         background-color: #ff0000; /* 첫 번째 구역 색상 */
@@ -72,6 +77,11 @@
         object-fit: cover;
         transform: scaleX(-1); /* 좌우 반전 */
       }
+      img {
+        width: 100%; /* 이미지가 박스 너비에 맞춰 조정 */
+        height: 100%; /* 이미지가 박스 높이에 맞춰 조정 */
+        object-fit: cover; /* 이미지를 박스에서 꽉 차게 조정 */
+      }
     </style>
   </head>
   <body>
@@ -79,7 +89,10 @@
     <!-- 상단 블랙 박스 -->
     <div class="container">
       <div class="row">
-        <div id="box1" class="box">아유</div>
+        <div id="box1" class="box">
+          <img src="img/100.png" alt="Sell Image" />
+          <!-- 이미지 추가 -->
+        </div>
         <div id="box2" class="box">하기</div>
       </div>
       <div class="row">
@@ -89,8 +102,12 @@
         </div>
       </div>
     </div>
-    <div class="black-bottom"></div>
+    <div class="black-bottom">
+      <img src="img/bar.png" alt="Bottom Image" />
+      <!-- 하단 블랙 박스에 이미지 추가 -->
+    </div>
     <!-- 하단 블랙 박스 -->
+
     <script>
       const video = document.querySelector('video');
       navigator.mediaDevices
