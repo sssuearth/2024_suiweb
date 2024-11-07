@@ -25,7 +25,7 @@
         background-color: black; /* 블랙 색상 */
       }
       .black-bottom {
-        width: 1366px; /* 하단 블랙 영역의 고정 너비 */
+        width: 100vw; /* 디스플레이 너비에 맞춤 */
         height: 127px; /* 하단 블랙 영역의 고정 높이 */
         background-color: black; /* 블랙 색상 */
         display: flex; /* Flexbox로 설정하여 이미지 중앙 정렬 */
@@ -59,13 +59,11 @@
         overflow: hidden; /* 자식 요소가 박스를 넘지 않도록 설정 */
       }
       #box1 {
-        background-color: #ff0000; /* 첫 번째 구역 색상 */
+        background-color: #000000; /* 첫 번째 구역 색상 */
       }
-      #box2 {
-        background-color: #00ff00; /* 두 번째 구역 색상 */
-      }
+      #box2,
       #box3 {
-        background-color: #0000ff; /* 세 번째 구역 색상 */
+        background-color: #000000; /* 두 번째, 세 번째 구역 색상 */
       }
       #box4 {
         display: flex;
@@ -95,11 +93,16 @@
           <img src="img/100.png" alt="Sell Image" />
           <!-- 이미지 추가 -->
         </div>
-
-        <div id="box2" class="box">하기</div>
+        <div id="box2" class="box">
+          <img src="img/pep.jpg" alt="Pep Image 1" />
+          <!-- 이미지 추가 -->
+        </div>
       </div>
       <div class="row">
-        <div id="box3" class="box">시러~</div>
+        <div id="box3" class="box">
+          <img src="img/pep2.png" alt="Pep Image 2" />
+          <!-- 이미지 추가 -->
+        </div>
         <div id="box4" class="box">
           <video autoplay playsinline></video>
         </div>
@@ -110,7 +113,6 @@
       <!-- 하단 블랙 박스에 이미지 추가 -->
     </div>
     <!-- 하단 블랙 박스 -->
-
     <script>
       const video = document.querySelector('video');
       navigator.mediaDevices
